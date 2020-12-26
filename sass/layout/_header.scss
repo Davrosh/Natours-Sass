@@ -1,0 +1,139 @@
+.header {
+  /*
+    if clip-path is not supported set the height to something less than before
+  */
+  height: 85vh;
+
+  /*
+       gradient over image to create colored image effect.
+       from top left (left color) to bottom right (right color)
+     */
+  /*     this usage of rgba only works in sass
+   */
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-primary, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("./../img/hero-small.jpg");
+  /* The entire image covers and generally isn't cropped by the borders */
+  background-size: cover;
+  /* The top of the image is the last thing to be cropped when resizing the page
+       and the center and bottom parts of the image can in fact disappear when
+       resizing
+     */
+  background-position: top;
+
+  position: relative;
+
+
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    /* 
+      The header starts from the top of its box and goes down till 95% of the
+      viewport so it's inherently responsive 
+    */
+    height: 95vh;
+  }
+
+  /*
+       This cuts the image into a polygon of a variate number of vertices.
+       We will cut it into a rectangle (four (x, y) coordinates) and we need to
+       specify where the four points are in relation to the header, the odd one of
+       which is the bottom right point which is 75% of viewport height to be
+       responsive. 
+       all rules for browser compatibility
+     */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+
+  /*
+    media query to target different screen resolutions
+    192 is the the resolution of the apple retina screen and that is usually
+    used as a reference
+
+    only display the high resolution version if the viewport is wider than a
+    phone's because otherwise it wouldn't make sense to load a large image onto
+    a phone
+
+    is the screen is density but the width is hugh it would make sense to load
+    the larger image
+  */
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+  only screen and (min-width: 125em) {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+  }
+
+  /*
+    clip path curve is calculated using the viewport height and when that
+    decreases we need to make it less steep
+  */
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &__logo-box {
+    /*
+       This is relative to a parent element with relative positioning, in this case
+       header   
+     */
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    /*
+         The width will be scaled accordingly.
+       */
+    height: 3.5rem;
+  }
+
+  /* .logo:hover {
+       animation: moveInRight 1s ease-out;
+   } */
+
+  /*
+       The above commented rule simply causes the logo to flicker:
+       By hovering over the logo it starts the animation, moving it away from the
+       mouse which triggers the end of the animation.
+       By specifying the hover area over the container we can safely move the mouse
+       about in it.
+   */
+  &__logo-box:hover &__logo {
+    animation: moveInLeft 1s ease-out;
+  }
+
+  &__text-box {
+    /*
+         Relative to a parent element with position relative
+       */
+    position: absolute;
+
+    /*
+         With respect to parent element
+       */
+    top: 40%;
+    left: 50%;
+
+    /*
+         With respect to the element itself after the above.
+         The above moves the top left point of the text-box to where we want its
+         center to be and this translation does the trick of moving the center to
+         where it should be.
+       */
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+  }
+}

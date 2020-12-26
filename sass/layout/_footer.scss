@@ -1,0 +1,111 @@
+.footer {
+  background-color: $color-grey-dark-3;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: $color-grey-light-1;
+
+  // @include respond(tab-port) {
+  //   padding: 8rem 0;
+  // }
+
+  /*
+  center an inline element like a picture
+  */
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  /*
+    grey line
+  */
+  &__navigation {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+    /*
+        only as long as the content
+    */
+    display: inline-block;
+
+    @include respond(tab-port) {
+      // width: 100%;
+      // text-align: center;
+
+      /*
+        trick used instead of surrounding with a container and using text-align
+        center or flex on the container
+      */
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  /*
+    side by side but not floated
+  */
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      /*
+        same as the footer's background
+      */
+      background-color: $color-grey-dark-3;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    /*
+        cool animation
+    */
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+
+    /*
+        tried doing it without float using justify-self:end and width
+        check layout->grid and html for .right-col
+    */
+    /*     width: 80%;
+    float: right; */
+
+    // @include respond(tab-port) {
+    //   width: 100%;
+    //   float: none;
+    // }
+  }
+}

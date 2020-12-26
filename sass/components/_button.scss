@@ -1,0 +1,229 @@
+/*
+  the button found in the header
+*/
+.btn {
+  /*
+       The default for an 'a' element is to have a link state with blue text
+       and a visited state with purple text.
+       We want even styling across both states.
+   */
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+
+    /*
+            Remove 'a' element default-decoration: underline and blue text
+        */
+    text-decoration: none;
+
+    /*
+            top-bottom then left-right 
+        */
+    padding: 1.5rem 4rem;
+
+    /*
+            By default, 'a' is an inline element and its margins appear to be
+            overlapping other elements on the page.
+            By setting its display to inline-block we allow it to have margins that 
+            are visually enforced and it is still regarded as text, hence us setting
+            text-align as center in the text-box container to center it. 
+            Only top-bottom margins are enforced, however, and we can still position
+            additional elements in the same line as it doesn't enforce a line break.
+        */
+    display: inline-block;
+
+    /*
+        Random large number
+      */
+    border-radius: 10rem;
+
+    /*
+        We put the transition rule here in the base and the rules in the special
+        selectors will be animated. Here we specify that all rules will be animated.
+      */
+    transition: all 0.2s;
+
+    /*
+      IMPORTANT: bug fix - only noticeable when the transition duration on the
+      btn and ::after differ a lot. on hover out, the reverse transition cuts
+      after the time specified by the btn (forward) transition instead of the
+      ::after's. In the project, this only applies for the green tours btn, the
+      others have clip-path/transforms and their one stacking context.
+
+      Explanation: the z-index of the ::after element is placing it behind the
+      section initially as it is in the root stacking context and has the lowest
+      z-index. When the button is hovered a transform is applied to the <a>
+      element which creates a new stacking context containing it and it's child
+      (::after), now ::after's z-index is relevant only in this stacking
+      context, so it is behind the main <a> element but in front of the section.
+      
+      When we are no longer hovering and the reverse of the  transition is
+      finished there is no longer a transform applied to the <a> element so it
+      is no longer in a separate stacking context, the child element assumes
+      it's original position in the stacking order. 
+
+      The solution places both and creates a new stacking context for the <a>
+      element initially so the z-index of the ::after child is relative to that
+      rather than the root stacking context. 
+
+    */
+    z-index: 0;
+    
+    /*
+        Will help us position the pseudo element ::after
+      */
+    position: relative;
+
+    font-size: $default-font-size;
+
+    /*
+      change for the <button> element, captured by & (without link and active)
+    */
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    /*
+        This is in relation to the initial state like in :link
+      */
+    transform: translateY(-0.3rem);
+
+    /*
+        Horizontal offset, vertical offset, optional blur and color
+      */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    /*
+        The hover effect makes it so we display the animation on hover making it
+        opaque and in reverse on mouse out, making it appear again but hidden behind
+        the real button.
+    */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    /*
+      remove default browser blue border when clicked
+      provide custom styling instead
+    */
+    outline: none;
+
+    /*
+        This is in relation to the initial state like in :link
+      */
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  /*
+        Specific button styling class
+    */
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  /*
+        Creates a child element of the button which we will use to animate it.
+    */
+  &::after {
+    /*
+        This is needed, otherwise it won't appear.
+      */
+    content: "";
+
+    /*
+        We apply the same styling to the pseudo element so it can pass off as the
+        element itself.
+        The height and width are calculated using the button itself.
+      */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+
+    /*
+        The resolution for the parent with position : relative finds the button and
+        so it is relative to it.
+      */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /*
+        Behind the button.
+      */
+    z-index: -1;
+
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    /*
+            Add a short delay of 0.75s before the animation starts.
+        */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /*
+            Here we can quickly apply the 0% effect specified in the animation
+            (this time being moveInBottom) to display when we load the page.
+            This makes sure that the button is opaque and in position.
+        */
+    animation-fill-mode: backwards;
+  }
+}
+
+/*
+  the learn more button
+*/
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+
+    /*
+        not take up the space of the whole line
+      */
+    display: inline-block;
+
+    /*
+        custom line under the text
+      */
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+
+    padding: 3px;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
+}

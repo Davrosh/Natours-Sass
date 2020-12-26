@@ -1,0 +1,361 @@
+.card {
+  // FUNCTIONALITY
+  /*
+        set on the parent, works on the children
+        3D effect - coming towards the user
+    */
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+
+  position: relative;
+
+  /*
+        we need to give the same height as we did for the side because of its
+        absolute positioning, this should make the perspective work
+    */
+  height: 52rem;
+
+  &__side {
+    height: 52rem;
+    transition: all 0.8s ease;
+
+    /*
+            we need to position the two elements on top of one another
+            using position absolute
+        */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /*
+            position absolute collapses an element's width
+        */
+    width: 100%;
+
+    /*
+            hide the back side of an element
+        */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    border-radius: 3px;
+
+    /*
+            stop children (the image) from overflowing the element
+        */
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      /*
+                fixes issue with our specific animation in some browsers
+            */
+      z-index: 2;
+
+      background-color: $color-white;
+    }
+
+    &--back {
+      /*
+                fixes issue with our specific animation in some browsers
+            */
+      z-index: 1;
+      /*
+                in the beginning, the back is rotated
+                later, when we hover over the card the back will flip to be
+                normal 
+            */
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  /*
+        when we hover over the card, its child, the front side, is rotated
+    */
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  /*
+        when we hover over the card, its child, the back side, is moved back
+    */
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+
+    /*
+            Defines how the two backgrounds, the image and the linear gradient,
+            should blend together. Can produce many cool effects
+        */
+    background-blend-mode: screen;
+
+    /*
+            clip the background for a cut picture effect like in the header
+            all rules for browser compatibility 
+        */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    /*
+            the overflow:hidden property is hiding our card's border radius
+            so we will set it manually
+        */
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    /*
+            different backgrounds for different cards
+            the path is from the css output file
+        */
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    /*
+            bes absolutely sure that this stays above the background clip
+        */
+    z-index: 1;
+
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    /*
+            position the heading above the background image
+        */
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    /*
+            narrower
+        */
+    width: 75%;
+  }
+
+  &__heading-span {
+    /*
+            this padding here lets us see more of the background color and
+            causes line break on the smaller headings 
+        */
+    padding: 1rem 1.5rem;
+
+    /*
+            makes treating two lines of a text element separately
+            now both lines of text have the same padding
+        */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      /*
+                the underline won't go all across the width of the card
+            */
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // BACK SIDE STYLING
+  &__cta {
+    /*
+            position it in the center of the element
+        */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*
+            give it a specific width so it can stretch so that the button, which
+            is treated as text (display: inline-block), can have its text across
+            only one line
+        */
+    width: 90%;
+    /*
+            the button child is treated as text and this is how we center it
+        */
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  /*
+    here we write the media query explicitly and add hover:none
+    to indicate that even though the screen may be wide, we would like to apply
+    this query show both sides of the card to devices that cannot hover, like an
+    i-pad, (hover:hover) is the opposite
+  */
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+
+    /*
+        we wanted to make the height of the front adjust to the back and that of
+        container but that is no longer necessary
+    */
+    height: auto;
+    border-radius: 3px;
+    /*
+        hide clip with white background
+    */
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: auto;
+
+      /*
+        no longer absolute
+      */
+      position: relative;
+
+      /*
+        shadow emanating from the side will reveal the outline of the clip
+      */
+      box-shadow: none;
+
+      &--back {
+        /*
+            both sides should not rotate
+        */
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    /*
+        both sides should not rotate
+    */
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    // FRONT SIDE STYLING
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+  }
+}

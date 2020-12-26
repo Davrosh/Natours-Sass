@@ -1,0 +1,171 @@
+/*
+      Here we put various font-related rules to be inherited from the body tag.
+      That is why we do not specify these rules in *, as it captures every
+      element.
+  */
+body {
+  font-family: "Lato", sans-serif;
+  /*
+        A weight specified in the link tag for Lato in index.html
+      */
+  font-weight: 400;
+
+  /* font-style: 16px; */
+
+  /*
+        This is 1.7 times larger than the normal predefined line-height;
+      */
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+/*
+     The text in the h1 tag is important for SEO purposes.
+ */
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  /*
+       Helps in fixing shaking in animations.
+       Normally used to hide the back part of an element when rotating it.
+     */
+  backface-visibility: hidden;
+
+  margin-bottom: 6rem;
+
+  /*   .heading-primary__text.heading-primary__text--main
+   */
+  &__text#{&}__text--main {
+    /*
+      We use spans here to semantically split up text.
+      Overriding span's default display: inline
+      Now it will force a line break between the spans.
+    */
+    display: block;
+
+    font-size: 6rem;
+    /*
+         Overriding h1's default font-weight
+       */
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* margin-right: -3.5rem; */
+
+    /*
+      This creates a padded box to the left of where the text starts, in
+      order to accommodate for the one created to the right by the letter
+      spacing. 
+    */
+    padding-left: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+
+    /*
+      animation-delay: 3s;
+      animation-iteration-count: 3;
+    */
+  }
+
+  &__text#{&}__text--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* margin-right: -1.74rem; */
+    padding-left: 1.75rem;
+
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  /*
+    this makes it so that the element doesn't take up the ENTIRE row and it ends
+    right after the text is finished, this is important to get to the end of the
+    linear gradient and see the whole color spectrum we've specified
+
+    it is still treated as text and so we assign a text align: center class to
+    its container later  
+
+    Setting the class to the heading itself doesn't work because the h2 is an
+    inline-block here, meaning that the element has the width of its content, in
+    this case the text. So if the element already has the width of the text, you
+    cannot center the text inside of it, because there is no empty space where
+    you could center it.
+
+    Instead, we do it on the parent, which contains that inline-block, and which
+    can therefore center that element inside it. 
+  */
+  display: inline-block;
+
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  /*
+    the background gets clipped exactly where the text is
+
+    it is now sitting behind the text and so we need the text to be transparent
+  */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  letter-spacing: 0.2rem;
+
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  /*
+    cool effect
+  */
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+/*
+  fancy word for third
+*/
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  /*   &:not(:last-child) {
+      margin-bottom: 3rem;
+  } */
+  &:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,0 +1,113 @@
+/*
+    Here we normalize our css for all elements on the page overriding
+    browser-specific settings.
+ */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /*
+      Instead of setting the box-sizing property to border-box here and have it
+      applied to every element, we can do better. By setting the box-sizing
+      property to be an inherited property in the context of all elements and then
+      setting it to border-box down in the body tag where it will then be
+      inherited by all its child elements, we are employing better structuring
+      practices. For example, we are now able to write a new component in the
+      page, in the context of which we can make border-box be equal to content-box
+      instead by just setting one property in the component's uppermost element.
+    */
+  box-sizing: inherit;
+}
+
+/*
+    root font-size, used in rem resolution
+  */
+html {
+  /*
+      This defines what 1rem is
+      Imagine that a person who does not see well changes the default font-size of
+      their browser, setting the font-size in pixels here basically overrides the
+      defaults set by the user and so it is bad practice.
+      We instead use percentages. If the browser default font-size is the usual 16
+      pixels then this translates to 10px and if, for instance, the browser
+      font-size for a given user is 22 pixels then this is set here to 13.75
+      pixels instead.
+    */
+  /* font-size: 10px; */
+  font-size: 62.5%;
+
+  /*
+    we can help responsiveness by scaling the font-size for different screen
+    sizes and since we've been using rems everywhere they will scale according
+    to this one simple rule everywhere
+  */
+  @include respond(big-desktop) {
+    font-size: 75%; // 12px
+  }
+
+  /*
+    we list the max-width queries in descending order so the most rigorous
+    max-width breakpoint holds (e.g. tab-port is valid for the max-width of
+    tab-land and tab-port, so by putting tab-port after it will take effect)
+  */
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; // 9px
+  }
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; // 8px (8/16=50%)
+  }
+  /*
+    since the font-size is identical to the above and phone is already captured
+    the above respond, the following is not needed
+  */
+  /*
+  @include respond(phone) {
+    font-size: 50%; // 8px
+  }
+  */
+}
+
+body {
+  /*
+    borders and padding are no longer added to the total width and height of the
+    element. Now, there will be no headaches of the form: "Hmm, I've specified
+    the height to be 100px but it needs to account for padding and borders, so
+    what will the final height be?". In this model, the height will be 100
+    pixels, as originally specified, and the specified padding and borders will
+    be a part of the total height of the element.
+    */
+  box-sizing: border-box;
+
+  /*
+    This rule is responsible for the 'photo frame' the body seems to be enclosed
+    in.
+  */
+  padding: 3rem;
+
+  /*
+    on smaller screens, remove the 'white border'
+  */
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+/*
+  Solution to white space on right side of body on small viewports
+*/
+html,body
+{
+  overflow-x: hidden; 
+}
+
+/*
+  change color of selected text
+*/
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

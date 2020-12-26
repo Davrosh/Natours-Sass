@@ -1,0 +1,294 @@
+.navigation {
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $color-white;
+
+    /*
+        to cover the initial, small background element
+    */
+    height: 7rem;
+    width: 7rem;
+
+    /*
+        half a rem further to the top and to the right
+        to cover it exactly
+    */
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+
+    border-radius: 50%;
+
+    /*
+        on top of everything, even the initial background
+    */
+    z-index: 2000;
+
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+
+    /*
+      center the three bars of the hamburger menu which are
+      a span and its two pseudo elements with: display: inline-block
+    */
+    text-align: center;
+    cursor: pointer;
+
+
+    /*
+      button is closer to the edge
+      also need to move small background behind it
+    */
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+
+    /*
+        stays at the same position across the page
+    */
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+
+    /*
+        radial gradient starts from the center of the element and moves out
+    */
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+
+    /*
+        on top of anything else, always visible
+    */
+    z-index: 1000;
+
+    /*
+      custom animation curve function - generated online
+      comes in easy and then accelerates like crazy
+    */
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+
+    //transform: scale(80);
+  }
+
+  &__nav {
+    /*
+        across the whole viewport
+        still below the button
+    */
+    height: 100vh;
+    position: fixed;
+
+    /*
+      move further back to beyond where the page ends
+    */
+    top: 0;
+    left: -25%;
+    z-index: 1500;
+
+    /*
+      hide navigation links and make them unclickable
+    */
+    opacity: 0;
+    width: 0;
+    /*
+      moves out a little bit
+    */
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    /*
+        center the list in the middle of the screen
+    */
+    position: absolute;
+
+    /*
+      move it to the center with respect to its original position
+    */
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  /*
+    style link - custom design
+  */
+  &__link {
+    &:link,
+    &:visited {
+      /*
+        for padding and transform
+      */
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      /*
+        solid color gradient trick
+
+        the background continues beyond the boundaries of the link itself
+        by increasing the background-size we can make it so it the gradient line
+        moves to the right, hidden initially
+      */
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      background-size: 220%;
+      background-position: 0% 0%;
+
+
+      transition: all 0.4s;
+
+      span {
+        margin-right: 1.5rem;
+        display: inline-block;
+      }
+    }
+
+    /*
+        gradient animation
+    */
+    &:hover,
+    &:active {
+      background-position: 100% 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+
+  //FUNCTIONALITY
+
+  /*
+    when the invisible checkbox under the button is checked
+    the small background circle envelopes the screen
+  */
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  /*
+    when the invisible checkbox under the button is checked
+    the navigation links become visible
+  */
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  /*
+    when hovering, move the top and bottom hamburger bars up and down,
+    respectively 
+  */
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  /*
+    hide the middle hamburger bar after clicking so that we may create
+    an x-shape with the two other ones
+
+    this is done without changing the width and height of the icon
+    since the positions of the before and after elements depend on it
+  */
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  /*
+    rotate them 3/4 of a circle instead of 45deg which is 1/4 because it makes
+    for a better effect
+
+    we move them both back to the middle where the original span was before we
+    before we hid it with top: 0;
+
+    rotation occurs around the center of the element by default unless
+    transform-origin is set
+
+  */
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}

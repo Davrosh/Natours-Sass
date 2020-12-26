@@ -1,0 +1,2387 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "linea-basic-10";
+  src:url("fonts/linea-basic-10.eot");
+  src:url("fonts/linea-basic-10.eot?#iefix") format("embedded-opentype"),
+    url("fonts/linea-basic-10.woff") format("woff"),
+    url("fonts/linea-basic-10.ttf") format("truetype"),
+    url("fonts/linea-basic-10.svg#linea-basic-10") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "linea-basic-10" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-basic"]:before,
+[class*=" icon-basic"]:before {
+  font-family: "linea-basic-10" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-basic-accelerator:before {
+  content: "a";
+}
+.icon-basic-alarm:before {
+  content: "b";
+}
+.icon-basic-anchor:before {
+  content: "c";
+}
+.icon-basic-anticlockwise:before {
+  content: "d";
+}
+.icon-basic-archive:before {
+  content: "e";
+}
+.icon-basic-archive-full:before {
+  content: "f";
+}
+.icon-basic-ban:before {
+  content: "g";
+}
+.icon-basic-battery-charge:before {
+  content: "h";
+}
+.icon-basic-battery-empty:before {
+  content: "i";
+}
+.icon-basic-battery-full:before {
+  content: "j";
+}
+.icon-basic-battery-half:before {
+  content: "k";
+}
+.icon-basic-bolt:before {
+  content: "l";
+}
+.icon-basic-book:before {
+  content: "m";
+}
+.icon-basic-book-pen:before {
+  content: "n";
+}
+.icon-basic-book-pencil:before {
+  content: "o";
+}
+.icon-basic-bookmark:before {
+  content: "p";
+}
+.icon-basic-calculator:before {
+  content: "q";
+}
+.icon-basic-calendar:before {
+  content: "r";
+}
+.icon-basic-cards-diamonds:before {
+  content: "s";
+}
+.icon-basic-cards-hearts:before {
+  content: "t";
+}
+.icon-basic-case:before {
+  content: "u";
+}
+.icon-basic-chronometer:before {
+  content: "v";
+}
+.icon-basic-clessidre:before {
+  content: "w";
+}
+.icon-basic-clock:before {
+  content: "x";
+}
+.icon-basic-clockwise:before {
+  content: "y";
+}
+.icon-basic-cloud:before {
+  content: "z";
+}
+.icon-basic-clubs:before {
+  content: "A";
+}
+.icon-basic-compass:before {
+  content: "B";
+}
+.icon-basic-cup:before {
+  content: "C";
+}
+.icon-basic-diamonds:before {
+  content: "D";
+}
+.icon-basic-display:before {
+  content: "E";
+}
+.icon-basic-download:before {
+  content: "F";
+}
+.icon-basic-exclamation:before {
+  content: "G";
+}
+.icon-basic-eye:before {
+  content: "H";
+}
+.icon-basic-eye-closed:before {
+  content: "I";
+}
+.icon-basic-female:before {
+  content: "J";
+}
+.icon-basic-flag1:before {
+  content: "K";
+}
+.icon-basic-flag2:before {
+  content: "L";
+}
+.icon-basic-floppydisk:before {
+  content: "M";
+}
+.icon-basic-folder:before {
+  content: "N";
+}
+.icon-basic-folder-multiple:before {
+  content: "O";
+}
+.icon-basic-gear:before {
+  content: "P";
+}
+.icon-basic-geolocalize-01:before {
+  content: "Q";
+}
+.icon-basic-geolocalize-05:before {
+  content: "R";
+}
+.icon-basic-globe:before {
+  content: "S";
+}
+.icon-basic-gunsight:before {
+  content: "T";
+}
+.icon-basic-hammer:before {
+  content: "U";
+}
+.icon-basic-headset:before {
+  content: "V";
+}
+.icon-basic-heart:before {
+  content: "W";
+}
+.icon-basic-heart-broken:before {
+  content: "X";
+}
+.icon-basic-helm:before {
+  content: "Y";
+}
+.icon-basic-home:before {
+  content: "Z";
+}
+.icon-basic-info:before {
+  content: "0";
+}
+.icon-basic-ipod:before {
+  content: "1";
+}
+.icon-basic-joypad:before {
+  content: "2";
+}
+.icon-basic-key:before {
+  content: "3";
+}
+.icon-basic-keyboard:before {
+  content: "4";
+}
+.icon-basic-laptop:before {
+  content: "5";
+}
+.icon-basic-life-buoy:before {
+  content: "6";
+}
+.icon-basic-lightbulb:before {
+  content: "7";
+}
+.icon-basic-link:before {
+  content: "8";
+}
+.icon-basic-lock:before {
+  content: "9";
+}
+.icon-basic-lock-open:before {
+  content: "!";
+}
+.icon-basic-magic-mouse:before {
+  content: "\"";
+}
+.icon-basic-magnifier:before {
+  content: "#";
+}
+.icon-basic-magnifier-minus:before {
+  content: "$";
+}
+.icon-basic-magnifier-plus:before {
+  content: "%";
+}
+.icon-basic-mail:before {
+  content: "&";
+}
+.icon-basic-mail-multiple:before {
+  content: "'";
+}
+.icon-basic-mail-open:before {
+  content: "(";
+}
+.icon-basic-mail-open-text:before {
+  content: ")";
+}
+.icon-basic-male:before {
+  content: "*";
+}
+.icon-basic-map:before {
+  content: "+";
+}
+.icon-basic-message:before {
+  content: ",";
+}
+.icon-basic-message-multiple:before {
+  content: "-";
+}
+.icon-basic-message-txt:before {
+  content: ".";
+}
+.icon-basic-mixer2:before {
+  content: "/";
+}
+.icon-basic-mouse:before {
+  content: ":";
+}
+.icon-basic-notebook:before {
+  content: ";";
+}
+.icon-basic-notebook-pen:before {
+  content: "<";
+}
+.icon-basic-notebook-pencil:before {
+  content: "=";
+}
+.icon-basic-paperplane:before {
+  content: ">";
+}
+.icon-basic-pencil-ruler:before {
+  content: "?";
+}
+.icon-basic-pencil-ruler-pen:before {
+  content: "@";
+}
+.icon-basic-photo:before {
+  content: "[";
+}
+.icon-basic-picture:before {
+  content: "]";
+}
+.icon-basic-picture-multiple:before {
+  content: "^";
+}
+.icon-basic-pin1:before {
+  content: "_";
+}
+.icon-basic-pin2:before {
+  content: "`";
+}
+.icon-basic-postcard:before {
+  content: "{";
+}
+.icon-basic-postcard-multiple:before {
+  content: "|";
+}
+.icon-basic-printer:before {
+  content: "}";
+}
+.icon-basic-question:before {
+  content: "~";
+}
+.icon-basic-rss:before {
+  content: "\\";
+}
+.icon-basic-server:before {
+  content: "\e000";
+}
+.icon-basic-server2:before {
+  content: "\e001";
+}
+.icon-basic-server-cloud:before {
+  content: "\e002";
+}
+.icon-basic-server-download:before {
+  content: "\e003";
+}
+.icon-basic-server-upload:before {
+  content: "\e004";
+}
+.icon-basic-settings:before {
+  content: "\e005";
+}
+.icon-basic-share:before {
+  content: "\e006";
+}
+.icon-basic-sheet:before {
+  content: "\e007";
+}
+.icon-basic-sheet-multiple:before {
+  content: "\e008";
+}
+.icon-basic-sheet-pen:before {
+  content: "\e009";
+}
+.icon-basic-sheet-pencil:before {
+  content: "\e00a";
+}
+.icon-basic-sheet-txt:before {
+  content: "\e00b";
+}
+.icon-basic-signs:before {
+  content: "\e00c";
+}
+.icon-basic-smartphone:before {
+  content: "\e00d";
+}
+.icon-basic-spades:before {
+  content: "\e00e";
+}
+.icon-basic-spread:before {
+  content: "\e00f";
+}
+.icon-basic-spread-bookmark:before {
+  content: "\e010";
+}
+.icon-basic-spread-text:before {
+  content: "\e011";
+}
+.icon-basic-spread-text-bookmark:before {
+  content: "\e012";
+}
+.icon-basic-star:before {
+  content: "\e013";
+}
+.icon-basic-tablet:before {
+  content: "\e014";
+}
+.icon-basic-target:before {
+  content: "\e015";
+}
+.icon-basic-todo:before {
+  content: "\e016";
+}
+.icon-basic-todo-pen:before {
+  content: "\e017";
+}
+.icon-basic-todo-pencil:before {
+  content: "\e018";
+}
+.icon-basic-todo-txt:before {
+  content: "\e019";
+}
+.icon-basic-todolist-pen:before {
+  content: "\e01a";
+}
+.icon-basic-todolist-pencil:before {
+  content: "\e01b";
+}
+.icon-basic-trashcan:before {
+  content: "\e01c";
+}
+.icon-basic-trashcan-full:before {
+  content: "\e01d";
+}
+.icon-basic-trashcan-refresh:before {
+  content: "\e01e";
+}
+.icon-basic-trashcan-remove:before {
+  content: "\e01f";
+}
+.icon-basic-upload:before {
+  content: "\e020";
+}
+.icon-basic-usb:before {
+  content: "\e021";
+}
+.icon-basic-video:before {
+  content: "\e022";
+}
+.icon-basic-watch:before {
+  content: "\e023";
+}
+.icon-basic-webpage:before {
+  content: "\e024";
+}
+.icon-basic-webpage-img-txt:before {
+  content: "\e025";
+}
+.icon-basic-webpage-multiple:before {
+  content: "\e026";
+}
+.icon-basic-webpage-txt:before {
+  content: "\e027";
+}
+.icon-basic-world:before {
+  content: "\e028";
+}
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800: is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
+/*
+    if a user changes their browser font-size, pixel-based media queries will
+    not be affected by this, so we need relative units.
+
+    rem and em work differently in media queries and work with respect to the
+    browser's font size and rem has less browser support.
+
+    1em = 16px
+
+    @content is the css rules we call the mixin with and they will apply
+    when the breakpoint is valid
+
+    only screen means that, for instance, if somebody tries to print out our
+    site then this media query will not be applied
+*/
+/*
+    Colors
+*/
+/*
+    Font
+*/
+/*
+    Grid
+*/
+/*
+    1140px - development standard
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/*
+    Here we normalize our css for all elements on the page overriding
+    browser-specific settings.
+ */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*
+      Instead of setting the box-sizing property to border-box here and have it
+      applied to every element, we can do better. By setting the box-sizing
+      property to be an inherited property in the context of all elements and then
+      setting it to border-box down in the body tag where it will then be
+      inherited by all its child elements, we are employing better structuring
+      practices. For example, we are now able to write a new component in the
+      page, in the context of which we can make border-box be equal to content-box
+      instead by just setting one property in the component's uppermost element.
+    */
+  box-sizing: inherit; }
+
+/*
+    root font-size, used in rem resolution
+  */
+html {
+  /*
+      This defines what 1rem is
+      Imagine that a person who does not see well changes the default font-size of
+      their browser, setting the font-size in pixels here basically overrides the
+      defaults set by the user and so it is bad practice.
+      We instead use percentages. If the browser default font-size is the usual 16
+      pixels then this translates to 10px and if, for instance, the browser
+      font-size for a given user is 22 pixels then this is set here to 13.75
+      pixels instead.
+    */
+  /* font-size: 10px; */
+  font-size: 62.5%;
+  /*
+    we can help responsiveness by scaling the font-size for different screen
+    sizes and since we've been using rems everywhere they will scale according
+    to this one simple rule everywhere
+  */
+  /*
+    we list the max-width queries in descending order so the most rigorous
+    max-width breakpoint holds (e.g. tab-port is valid for the max-width of
+    tab-land and tab-port, so by putting tab-port after it will take effect)
+  */
+  /*
+    since the font-size is identical to the above and phone is already captured
+    the above respond, the following is not needed
+  */
+  /*
+  @include respond(phone) {
+    font-size: 50%; // 8px
+  }
+  */ }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  /*
+    borders and padding are no longer added to the total width and height of the
+    element. Now, there will be no headaches of the form: "Hmm, I've specified
+    the height to be 100px but it needs to account for padding and borders, so
+    what will the final height be?". In this model, the height will be 100
+    pixels, as originally specified, and the specified padding and borders will
+    be a part of the total height of the element.
+    */
+  box-sizing: border-box;
+  /*
+    This rule is responsible for the 'photo frame' the body seems to be enclosed
+    in.
+  */
+  padding: 3rem;
+  /*
+    on smaller screens, remove the 'white border'
+  */ }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+/*
+  Solution to white space on right side of body on small viewports
+*/
+html, body {
+  overflow-x: hidden; }
+
+/*
+  change color of selected text
+*/
+::selection {
+  background-color: #55c57a;
+  color: #fff; }
+
+/*
+      Here we put various font-related rules to be inherited from the body tag.
+      That is why we do not specify these rules in *, as it captures every
+      element.
+  */
+body {
+  font-family: "Lato", sans-serif;
+  /*
+        A weight specified in the link tag for Lato in index.html
+      */
+  font-weight: 400;
+  /* font-style: 16px; */
+  /*
+        This is 1.7 times larger than the normal predefined line-height;
+      */
+  line-height: 1.7;
+  color: #777; }
+
+/*
+     The text in the h1 tag is important for SEO purposes.
+ */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /*
+       Helps in fixing shaking in animations.
+       Normally used to hide the back part of an element when rotating it.
+     */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+  /*   .heading-primary__text.heading-primary__text--main
+   */ }
+  .heading-primary__text.heading-primary__text--main {
+    /*
+      We use spans here to semantically split up text.
+      Overriding span's default display: inline
+      Now it will force a line break between the spans.
+    */
+    display: block;
+    font-size: 6rem;
+    /*
+         Overriding h1's default font-weight
+       */
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* margin-right: -3.5rem; */
+    /*
+      This creates a padded box to the left of where the text starts, in
+      order to accommodate for the one created to the right by the letter
+      spacing. 
+    */
+    padding-left: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+      animation-delay: 3s;
+      animation-iteration-count: 3;
+    */ }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary__text.heading-primary__text--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
+  .heading-primary__text.heading-primary__text--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* margin-right: -1.74rem; */
+    padding-left: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary__text.heading-primary__text--sub {
+        letter-spacing: 0.5rem; } }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  /*
+    this makes it so that the element doesn't take up the ENTIRE row and it ends
+    right after the text is finished, this is important to get to the end of the
+    linear gradient and see the whole color spectrum we've specified
+
+    it is still treated as text and so we assign a text align: center class to
+    its container later  
+
+    Setting the class to the heading itself doesn't work because the h2 is an
+    inline-block here, meaning that the element has the width of its content, in
+    this case the text. So if the element already has the width of the text, you
+    cannot center the text inside of it, because there is no empty space where
+    you could center it.
+
+    Instead, we do it on the parent, which contains that inline-block, and which
+    can therefore center that element inside it. 
+  */
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  /*
+    the background gets clipped exactly where the text is
+
+    it is now sitting behind the text and so we need the text to be transparent
+  */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+  /*
+    cool effect
+  */ }
+  @media only screen and (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+/*
+  fancy word for third
+*/
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem;
+  /*   &:not(:last-child) {
+      margin-bottom: 3rem;
+  } */ }
+  .paragraph:not(:last-of-type) {
+    margin-bottom: 3rem; }
+
+/*
+    utility classes that help components stay independent and be placed in
+    different places around the page
+    we override a given rule if it is already defined in the component itself
+    with !important
+*/
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 3rem !important; } }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+/*
+  the button found in the header
+*/
+.btn {
+  /*
+       The default for an 'a' element is to have a link state with blue text
+       and a visited state with purple text.
+       We want even styling across both states.
+   */
+  /*
+        Specific button styling class
+    */
+  /*
+        Creates a child element of the button which we will use to animate it.
+    */ }
+  .btn, .btn:link, .btn:visited {
+    text-transform: uppercase;
+    /*
+            Remove 'a' element default-decoration: underline and blue text
+        */
+    text-decoration: none;
+    /*
+            top-bottom then left-right 
+        */
+    padding: 1.5rem 4rem;
+    /*
+            By default, 'a' is an inline element and its margins appear to be
+            overlapping other elements on the page.
+            By setting its display to inline-block we allow it to have margins that 
+            are visually enforced and it is still regarded as text, hence us setting
+            text-align as center in the text-box container to center it. 
+            Only top-bottom margins are enforced, however, and we can still position
+            additional elements in the same line as it doesn't enforce a line break.
+        */
+    display: inline-block;
+    /*
+        Random large number
+      */
+    border-radius: 10rem;
+    /*
+        We put the transition rule here in the base and the rules in the special
+        selectors will be animated. Here we specify that all rules will be animated.
+      */
+    transition: all 0.2s;
+    /*
+      IMPORTANT: bug fix - only noticeable when the transition duration on the
+      btn and ::after differ a lot. on hover out, the reverse transition cuts
+      after the time specified by the btn (forward) transition instead of the
+      ::after's. In the project, this only applies for the green tours btn, the
+      others have clip-path/transforms and their one stacking context.
+
+      Explanation: the z-index of the ::after element is placing it behind the
+      section initially as it is in the root stacking context and has the lowest
+      z-index. When the button is hovered a transform is applied to the <a>
+      element which creates a new stacking context containing it and it's child
+      (::after), now ::after's z-index is relevant only in this stacking
+      context, so it is behind the main <a> element but in front of the section.
+      
+      When we are no longer hovering and the reverse of the  transition is
+      finished there is no longer a transform applied to the <a> element so it
+      is no longer in a separate stacking context, the child element assumes
+      it's original position in the stacking order. 
+
+      The solution places both and creates a new stacking context for the <a>
+      element initially so the z-index of the ::after child is relative to that
+      rather than the root stacking context. 
+
+    */
+    z-index: 0;
+    /*
+        Will help us position the pseudo element ::after
+      */
+    position: relative;
+    font-size: 1.6rem;
+    /*
+      change for the <button> element, captured by & (without link and active)
+    */
+    border: none;
+    cursor: pointer; }
+  .btn:hover {
+    /*
+        This is in relation to the initial state like in :link
+      */
+    transform: translateY(-0.3rem);
+    /*
+        Horizontal offset, vertical offset, optional blur and color
+      */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /*
+        The hover effect makes it so we display the animation on hover making it
+        opaque and in reverse on mouse out, making it appear again but hidden behind
+        the real button.
+    */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active, .btn:focus {
+    /*
+      remove default browser blue border when clicked
+      provide custom styling instead
+    */
+    outline: none;
+    /*
+        This is in relation to the initial state like in :link
+      */
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff; }
+    .btn--green::after {
+      background-color: #55c57a; }
+  .btn::after {
+    /*
+        This is needed, otherwise it won't appear.
+      */
+    content: "";
+    /*
+        We apply the same styling to the pseudo element so it can pass off as the
+        element itself.
+        The height and width are calculated using the button itself.
+      */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /*
+        The resolution for the parent with position : relative finds the button and
+        so it is relative to it.
+      */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*
+        Behind the button.
+      */
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--animated {
+    /*
+            Add a short delay of 0.75s before the animation starts.
+        */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /*
+            Here we can quickly apply the 0% effect specified in the animation
+            (this time being moveInBottom) to display when we load the page.
+            This makes sure that the button is opaque and in position.
+        */
+    animation-fill-mode: backwards; }
+
+/*
+  the learn more button
+*/
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  /*
+        not take up the space of the whole line
+      */
+  display: inline-block;
+  /*
+        custom line under the text
+      */
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.composition {
+  position: relative;
+  /*
+        instead of float
+    */
+  display: flex;
+  /*
+        all not hovered photos when our photo is hovered
+    */
+  /*composition:hover composition__photo:not(:hover) {*/ }
+  .composition__photo {
+    /*
+            height adjusted according to aspect ratio, all of them have almost
+            the same intrinsic size
+            using % helps resize it when changing the viewport
+        */
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    /*
+            offset for outline "border"
+        */
+    outline-offset: 2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .composition__photo {
+        /*             
+                float: left;
+            */
+        /*
+                positioning a element with top and left now will be relative to
+                the place where the element is normally
+            */
+        position: relative;
+        width: 33.33333333%;
+        /*
+                more pronounced shadow
+            */
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+      @media only screen and (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.2); } }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+      @media only screen and (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -1rem;
+          transform: scale(1.3);
+          z-index: 100; } }
+    .composition__photo--p3 {
+      /*
+                why not?
+            */
+      left: 20%;
+      top: 10rem; }
+      @media only screen and (max-width: 56.25em) {
+        .composition__photo--p3 {
+          top: 1rem;
+          left: 0;
+          transform: scale(1.1); } }
+    .composition__photo:hover {
+      /*
+                this is similar to setting a border
+                but outline has an outline offset,
+                the rule for that is above
+
+                we could have used border and padding
+                but padding shrinks the image down which is not what we want
+            */
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      /*
+                higher
+            */
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.feature-box {
+  /*
+        see-through background
+    */
+  background-color: rgba(255, 255, 255, 0.8);
+  /*
+    the font-size of the paragraph inherits this
+  */
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  /*
+        icon font is a font so it is resized using font-size
+    */ }
+  @media only screen and (max-width: 56.25em) {
+    .feature-box {
+      padding: 2rem; } }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    /*
+        color the icon using background-clip
+    */
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; }
+    @media only screen and (max-width: 56.25em) {
+      .feature-box__icon {
+        margin-bottom: 0; } }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.card {
+  /*
+        set on the parent, works on the children
+        3D effect - coming towards the user
+    */
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  /*
+        we need to give the same height as we did for the side because of its
+        absolute positioning, this should make the perspective work
+    */
+  height: 52rem;
+  /*
+        when we hover over the card, its child, the front side, is rotated
+    */
+  /*
+        when we hover over the card, its child, the back side, is moved back
+    */
+  /*
+    here we write the media query explicitly and add hover:none
+    to indicate that even though the screen may be wide, we would like to apply
+    this query show both sides of the card to devices that cannot hover, like an
+    i-pad, (hover:hover) is the opposite
+  */ }
+  .card__side {
+    height: 52rem;
+    transition: all 0.8s ease;
+    /*
+            we need to position the two elements on top of one another
+            using position absolute
+        */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*
+            position absolute collapses an element's width
+        */
+    width: 100%;
+    /*
+            hide the back side of an element
+        */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    /*
+            stop children (the image) from overflowing the element
+        */
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      /*
+                fixes issue with our specific animation in some browsers
+            */
+      z-index: 2;
+      background-color: #fff; }
+    .card__side--back {
+      /*
+                fixes issue with our specific animation in some browsers
+            */
+      z-index: 1;
+      /*
+                in the beginning, the back is rotated
+                later, when we hover over the card the back will flip to be
+                normal 
+            */
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    /*
+            Defines how the two backgrounds, the image and the linear gradient,
+            should blend together. Can produce many cool effects
+        */
+    background-blend-mode: screen;
+    /*
+            clip the background for a cut picture effect like in the header
+            all rules for browser compatibility 
+        */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    /*
+            the overflow:hidden property is hiding our card's border radius
+            so we will set it manually
+        */
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    /*
+            different backgrounds for different cards
+            the path is from the css output file
+        */ }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+  .card__heading {
+    /*
+            bes absolutely sure that this stays above the background clip
+        */
+    z-index: 1;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    /*
+            position the heading above the background image
+        */
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    /*
+            narrower
+        */
+    width: 75%; }
+  .card__heading-span {
+    /*
+            this padding here lets us see more of the background color and
+            causes line break on the smaller headings 
+        */
+    padding: 1rem 1.5rem;
+    /*
+            makes treating two lines of a text element separately
+            now both lines of text have the same padding
+        */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      /*
+                the underline won't go all across the width of the card
+            */
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    /*
+            position it in the center of the element
+        */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*
+            give it a specific width so it can stretch so that the button, which
+            is treated as text (display: inline-block), can have its text across
+            only one line
+        */
+    width: 90%;
+    /*
+            the button child is treated as text and this is how we center it
+        */
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    .card {
+      /*
+        we wanted to make the height of the front adjust to the back and that of
+        container but that is no longer necessary
+    */
+      height: auto;
+      border-radius: 3px;
+      /*
+        hide clip with white background
+    */
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+      /*
+        both sides should not rotate
+    */ }
+      .card__side {
+        height: auto;
+        /*
+        no longer absolute
+      */
+        position: relative;
+        /*
+        shadow emanating from the side will reveal the outline of the clip
+      */
+        box-shadow: none; }
+        .card__side--back {
+          /*
+            both sides should not rotate
+        */
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__details {
+        padding: 1rem 3rem; }
+      .card__cta {
+        position: relative;
+        top: 0%;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 4rem; } }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  /*
+        color against our video
+    */
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  /*
+        to accommodate for the picture's translateX(-3rem)
+    */
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg);
+  /*
+        on phones, save width by removing skew
+    */
+  /*
+    when hovering on image figure, the caption appears
+    */
+  /*
+    when hovering on image figure, the image is zoomed out, blurred and darkened
+    */ }
+  @media only screen and (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
+  .story__shape {
+    /*
+            fixes a problem for some people
+        */
+    overflow: hidden;
+    width: 15rem;
+    height: 15rem;
+    /*
+            the text floats around it
+        */
+    float: left;
+    /*
+            when moving floated elements, transforms are better than margins
+            move the image further left from the text
+            counter the skew on the parent
+            IMPORTANT: we need to put both in the same line since otherwise
+            one transform can take precedence over another
+        */
+    transform: translateX(-3rem) skewX(12.01deg);
+    position: relative;
+    /*
+            easier alternative to clip-path: circle
+            we actually could do without clip-path but we need to keep it in
+            order to demonstrate @support
+        */
+    overflow: hidden;
+    border-radius: 50%; }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__shape {
+        /*
+                the text floats around it as if it were a circle
+                radius at x y
+                we put 50% on the radius so that its diameter is 100% of the
+                image size
+                and we position the start of the circle in the center of the
+                image needs float and defined height and width
+            */
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        /*
+                the image now looks like a circle
+            */
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        /*
+                since we know clip-path we no longer need border-radius
+            */
+        border-radius: 0; } }
+    @media only screen and (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
+  .story__img {
+    /*
+            responsive images need explicit sizing
+        */
+    height: 100%;
+    /*
+            initially, the image is zoomed in
+        */
+    transform: translateX(-4rem) scale(1.4);
+    /*
+            fix general animation errors
+        */
+    backface-visibility: hidden;
+    transition: all .5s; }
+  .story__text {
+    transform: skewX(12deg); }
+    @media only screen and (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
+  .story__caption {
+    /*
+            text in the middle of image, vertically further down
+        */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    /*
+            initially invisible
+        */
+    opacity: 0;
+    transition: all .5s;
+    /*
+            fix "shakyness" on hover
+        */
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden;
+  /*
+        fill the entire section
+    */ }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    /*
+            fill the parent while maintaining the aspect ratio
+            whatever is left is clipped
+        */
+    object-fit: cover; }
+
+.form {
+  /*
+        The :placeholder-shown pseudo-class styles an element that has an active
+        placeholder. In our case, the input.
+        The label is not a child, but a sibling so we use the adjacent sibling
+        selector (the very following selector - label has to be declared after
+        input).
+    */
+  /*
+        hide real html radio button
+    */
+  /*
+        a fake radio button that we can design
+    */
+  /*
+        when the real radio input is checked ->
+        in the general sibling radio label ->
+        take its child the fake radio button and set its after element's opacity
+        to 1 - the smaller circle now appears
+    */ }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__input {
+    font-size: 1.5rem;
+    /*
+            for reusable component
+        */
+    font-family: inherit;
+    color: inherit;
+    /*
+            always a bit more on the sides
+        */
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rbga(#fff, 0.5);
+    border: none;
+    /*
+            it needs to be here because otherwise when we click on an element
+            it becomes focused and gets a border and moves the other ones down
+            now it will have the border regardless only we cannot see it
+        */
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    /*
+            give it its own line
+        */
+    display: block;
+    transition: all .3s;
+    /*
+            when the text entered is invalid, change color
+        */
+    /*
+            style placeholder text
+        */
+    /*
+            overrides firefox box-shadow on required inputs
+        */ }
+    @media only screen and (max-width: 56.25em) {
+      .form__input {
+        width: 100%; } }
+    .form__input:focus {
+      /*
+                remove regular blue box when focused
+                instead, custom focus effect
+            */
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #55c57a; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+    .form__input::-webkit-input-placeholder {
+      color: #999; }
+    .form__input::placeholder {
+      color: #999; }
+    .form__input:required {
+      box-shadow: none; }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s; }
+  .form__input:placeholder-shown + .form__label {
+    /*
+            initially, the label text does not appear: it is opaque and by
+            setting visibility: hidden it is also completely gone
+            we need to declare both because visibility cannot be animated
+            whereas opacity can.
+        */
+    opacity: 0;
+    visibility: hidden;
+    /*
+            initially, it is above where the input is
+            we would like it to come down in the animation
+        */
+    transform: translateY(-4rem); }
+  .form__radio-group {
+    /*
+            both radio buttons on same line
+        */
+    width: 49%;
+    display: inline-block;
+    position: relative;
+    /*
+            radio buttons on top of each other
+        */ }
+    @media only screen and (max-width: 56.25em) {
+      .form__radio-group {
+        width: 100%;
+        margin-bottom: 2rem; } }
+  .form__radio-input {
+    /* display: none; */
+    /*
+            now, the real input is still "interactable" by tabbing
+        */
+    opacity: 0;
+    /*
+            the browser box exclaiming that the radio input is required is
+            next to the first real radio button
+            so we will move the real radio button
+
+            the two input boxes for name and email have a width of 90%
+            of the container
+
+            the first radio button is taken out of the normal flow,
+            4% from the right edge of the first radio-group
+            which is 49% - 4% = 45% which is the halfway point of the name and
+            email input boxes
+        */
+    position: absolute;
+    right: 4%;
+    bottom: 0; }
+    @media only screen and (max-width: 56.25em) {
+      .form__radio-input {
+        right: 46%; } }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+    /*
+            smaller circle in the center of the big circle
+            for selected radio button
+        */ }
+    .form__radio-button::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #55c57a;
+      opacity: 0;
+      transition: opacity .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
+  .form__radio-input:focus ~ .form__radio-label .form__radio-button {
+    border: 5px solid #000; }
+  .form__radio-input:focus ~ .form__radio-label .form__radio-button::after {
+    background-color: #000; }
+
+.popup {
+  /*
+    let the popup occupy the entire viewport and be fixed
+    above even the nav button and gray
+  */
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  /*
+    opacity can be animated
+  */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  /*
+    check if it is supported (needs property value) and apply within
+
+    apply effect to the background of a blur and add slightly less dim
+    background
+    if this is not supported then the above darker background still applies
+  */
+  /*
+    when we have #popup at the url (when we click on the link that
+    opens up the popup)
+
+    when we click on the close button link, it is set to replace the #popup with
+    something else, getting rid of the target state
+  */
+  /*
+    when popup is triggered, content appears and scales up
+  */
+  /*
+    style the close button
+  */ }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
+  .popup__content {
+    /*
+        center of the popup using absolute positioning
+    */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    /*
+        using table to create two columns of equal height
+        and specified width and vertical-align
+        but we will be using semantic css with css grid
+    */
+    /*
+        fix images overflowing content, border radius not visible
+    */
+    overflow: hidden;
+    /*
+        at first invisible and scaled down
+        we need to define translate again because the one in mixin absCenter
+        would otherwise override it
+    */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    /*
+        first we allow the black background to come in, then we display our
+        content box with a delay
+    */
+    transition: all 0.5s 0.2s; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__content {
+        height: 80% !important;
+        max-width: 80% !important;
+        padding: 0 !important; } }
+  .popup__left {
+    /*
+      part of our compact fix for a small phone popup
+      no pictures, centered and scrolled
+    */ }
+    @media only screen and (max-width: 56.25em) {
+      .popup__left {
+        display: flex; } }
+    @media only screen and (max-width: 37.5em) {
+      .popup__left {
+        display: none; } }
+  .popup__right {
+    padding: 3rem 5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 2rem;
+        justify-content: space-between; } }
+  .popup__img {
+    display: block;
+    width: 100%;
+    /*
+        make each occupy just half of the automatic height
+    */
+    height: 50%;
+    /*
+        make each cover to make them not look stretched out
+    */
+    object-fit: cover; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__img {
+        width: 50%;
+        height: 100%; } }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    /*
+        create two equally wide text columns with a gap and a border in between
+    */
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid #eee;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    /*
+        automatically add hyphens to wrapping words
+        doesn't work in CHrome desktop :(
+    */
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; }
+    @media only screen and (max-width: 56.25em) {
+      .popup__text {
+        margin-bottom: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .popup__text {
+        display: flex;
+        flex: 1 0 20rem;
+        column-count: 1;
+        overflow: hidden auto; } }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close:link, .popup__close:visited {
+    color: #777;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    line-height: 1; }
+    @media only screen and (max-width: 37.5em) {
+      .popup__close:link, .popup__close:visited {
+        top: 0.5rem;
+        right: 1rem; } }
+  .popup__close:hover {
+    color: #55c57a; }
+
+.row {
+  /*
+        center in viewport
+    */
+  margin: 0 auto;
+  max-width: 114rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 6rem;
+  row-gap: 8rem;
+  /*
+        classes that begins with 'col-'
+    */
+  /*
+        grid fix for stories section having no .col-i-of-j in html
+        kind of like a default
+    */ }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      column-gap: 0; } }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      row-gap: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 70rem;
+      padding: 0 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .row {
+      max-width: 50rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row [class^="col-"] {
+      grid-column: 1 / -1 !important; } }
+  .row .col-1-of-2 {
+    /*
+            calculate and mix units
+        */
+    grid-column-start: span 6; }
+  .row .col-1-of-3 {
+    grid-column-start: span 4; }
+  .row .col-2-of-3 {
+    grid-column-start: span 8; }
+  .row .col-1-of-4 {
+    grid-column-start: span 3; }
+  .row .col-2-of-4 {
+    grid-column-start: span 6; }
+  .row .col-3-of-4 {
+    grid-column-start: span 9; }
+  .row > * {
+    grid-column-start: span 12; }
+  .row .right-col {
+    width: 80%;
+    justify-self: end; }
+    @media only screen and (max-width: 56.25em) {
+      .row .right-col {
+        width: 100%;
+        justify-self: center; } }
+  .row--no-gap {
+    column-gap: 0;
+    row-gap: 0; }
+
+.header {
+  /*
+    if clip-path is not supported set the height to something less than before
+  */
+  height: 85vh;
+  /*
+       gradient over image to create colored image effect.
+       from top left (left color) to bottom right (right color)
+     */
+  /*     this usage of rgba only works in sass
+   */
+  background-image: linear-gradient(to bottom right, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("./../img/hero-small.jpg");
+  /* The entire image covers and generally isn't cropped by the borders */
+  background-size: cover;
+  /* The top of the image is the last thing to be cropped when resizing the page
+       and the center and bottom parts of the image can in fact disappear when
+       resizing
+     */
+  background-position: top;
+  position: relative;
+  /*
+       This cuts the image into a polygon of a variate number of vertices.
+       We will cut it into a rectangle (four (x, y) coordinates) and we need to
+       specify where the four points are in relation to the header, the odd one of
+       which is the bottom right point which is 75% of viewport height to be
+       responsive. 
+       all rules for browser compatibility
+     */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*
+    media query to target different screen resolutions
+    192 is the the resolution of the apple retina screen and that is usually
+    used as a reference
+
+    only display the high resolution version if the viewport is wider than a
+    phone's because otherwise it wouldn't make sense to load a large image onto
+    a phone
+
+    is the screen is density but the width is hugh it would make sense to load
+    the larger image
+  */
+  /*
+    clip path curve is calculated using the viewport height and when that
+    decreases we need to make it less steep
+  */
+  /* .logo:hover {
+       animation: moveInRight 1s ease-out;
+   } */
+  /*
+       The above commented rule simply causes the logo to flicker:
+       By hovering over the logo it starts the animation, moving it away from the
+       mouse which triggers the end of the animation.
+       By specifying the hover area over the container we can safely move the mouse
+       about in it.
+   */ }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      /* 
+      The header starts from the top of its box and goes down till 95% of the
+      viewport so it's inherently responsive 
+    */
+      height: 95vh; } }
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+  .header__logo-box {
+    /*
+       This is relative to a parent element with relative positioning, in this case
+       header   
+     */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /*
+         The width will be scaled accordingly.
+       */
+    height: 3.5rem; }
+  .header__logo-box:hover .header__logo {
+    animation: moveInLeft 1s ease-out; }
+  .header__text-box {
+    /*
+         Relative to a parent element with position relative
+       */
+    position: absolute;
+    /*
+         With respect to parent element
+       */
+    top: 40%;
+    left: 50%;
+    /*
+         With respect to the element itself after the above.
+         The above moves the top left point of the text-box to where we want its
+         center to be and this translation does the trick of moving the center to
+         where it should be.
+       */
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: #f7f7f7;
+  /*
+  center an inline element like a picture
+  */
+  /*
+    grey line
+  */
+  /*
+    side by side but not floated
+  */ }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    /*
+        only as long as the content
+    */
+    display: inline-block; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__navigation {
+        /*
+        trick used instead of surrounding with a container and using text-align
+        center or flex on the container
+      */
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center; } }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link {
+    /*
+        cool animation
+    */ }
+    .footer__link:link, .footer__link:visited {
+      color: #f7f7f7;
+      /*
+        same as the footer's background
+      */
+      background-color: #333;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s; }
+    .footer__link:hover, .footer__link:active {
+      color: #55c57a;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+      transform: rotate(5deg) scale(1.3); }
+  .footer__copyright {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    /*
+        tried doing it without float using justify-self:end and width
+        check layout->grid and html for .right-col
+    */
+    /*     width: 80%;
+    float: right; */ }
+
+.navigation {
+  /*
+    style link - custom design
+  */
+  /*
+    when the invisible checkbox under the button is checked
+    the small background circle envelopes the screen
+  */
+  /*
+    when the invisible checkbox under the button is checked
+    the navigation links become visible
+  */
+  /*
+    when hovering, move the top and bottom hamburger bars up and down,
+    respectively 
+  */
+  /*
+    hide the middle hamburger bar after clicking so that we may create
+    an x-shape with the two other ones
+
+    this is done without changing the width and height of the icon
+    since the positions of the before and after elements depend on it
+  */
+  /*
+    rotate them 3/4 of a circle instead of 45deg which is 1/4 because it makes
+    for a better effect
+
+    we move them both back to the middle where the original span was before we
+    before we hid it with top: 0;
+
+    rotation occurs around the center of the element by default unless
+    transform-origin is set
+
+  */ }
+  .navigation__checkbox {
+    display: none; }
+  .navigation__button {
+    background-color: #fff;
+    /*
+        to cover the initial, small background element
+    */
+    height: 7rem;
+    width: 7rem;
+    /*
+        half a rem further to the top and to the right
+        to cover it exactly
+    */
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    /*
+        on top of everything, even the initial background
+    */
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    /*
+      center the three bars of the hamburger menu which are
+      a span and its two pseudo elements with: display: inline-block
+    */
+    text-align: center;
+    cursor: pointer;
+    /*
+      button is closer to the edge
+      also need to move small background behind it
+    */ }
+    @media only screen and (max-width: 56.25em) {
+      .navigation__button {
+        top: 4rem;
+        right: 4rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__button {
+        top: 3rem;
+        right: 3rem; } }
+  .navigation__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    /*
+        stays at the same position across the page
+    */
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    /*
+        radial gradient starts from the center of the element and moves out
+    */
+    background-image: radial-gradient(#7ed56f, #28b485);
+    /*
+        on top of anything else, always visible
+    */
+    z-index: 1000;
+    /*
+      custom animation curve function - generated online
+      comes in easy and then accelerates like crazy
+    */
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+    @media only screen and (max-width: 56.25em) {
+      .navigation__background {
+        top: 4.5rem;
+        right: 4.5rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__background {
+        top: 3.5rem;
+        right: 3.5rem; } }
+  .navigation__nav {
+    /*
+        across the whole viewport
+        still below the button
+    */
+    height: 100vh;
+    position: fixed;
+    /*
+      move further back to beyond where the page ends
+    */
+    top: 0;
+    left: -25%;
+    z-index: 1500;
+    /*
+      hide navigation links and make them unclickable
+    */
+    opacity: 0;
+    width: 0;
+    /*
+      moves out a little bit
+    */
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .navigation__list {
+    /*
+        center the list in the middle of the screen
+    */
+    position: absolute;
+    /*
+      move it to the center with respect to its original position
+    */
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%; }
+  .navigation__item {
+    margin: 1rem; }
+  .navigation__link {
+    /*
+        gradient animation
+    */ }
+    .navigation__link:link, .navigation__link:visited {
+      /*
+        for padding and transform
+      */
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      /*
+        solid color gradient trick
+
+        the background continues beyond the boundaries of the link itself
+        by increasing the background-size we can make it so it the gradient line
+        moves to the right, hidden initially
+      */
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+      background-size: 220%;
+      background-position: 0% 0%;
+      transition: all 0.4s; }
+      .navigation__link:link span, .navigation__link:visited span {
+        margin-right: 1.5rem;
+        display: inline-block; }
+    .navigation__link:hover, .navigation__link:active {
+      background-position: 100% 100%;
+      color: #55c57a;
+      transform: translateX(1rem); }
+  .navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(80); }
+  .navigation__checkbox:checked ~ .navigation__nav {
+    opacity: 1;
+    width: 100%; }
+  .navigation__icon {
+    position: relative;
+    margin-top: 3.5rem; }
+    .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+      width: 3rem;
+      height: 2px;
+      background-color: #333;
+      display: inline-block; }
+    .navigation__icon::before, .navigation__icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s; }
+    .navigation__icon::before {
+      top: -0.8rem; }
+    .navigation__icon::after {
+      top: 0.8rem; }
+  .navigation__button:hover .navigation__icon::before {
+    top: -1rem; }
+  .navigation__button:hover .navigation__icon::after {
+    top: 1rem; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg); }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg); }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  /*
+    we need to raise the background up because the previous section's
+    polygon has left a white wedge between the two sections
+    the header is 95vh and the polygon ends at 75vh and so the difference
+    what we need to cover is 20vh
+    */
+  margin-top: -20vh;
+  /*
+    smaller screens have longer empty spaces in between sections
+  */ }
+  @media only screen and (max-width: 56.25em) {
+    .section-about {
+      padding: 20rem 0; } }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  /*
+        skewed background - instead of the clip-path approach
+    */
+  transform: skewY(-7deg);
+  /*
+        hide the white gap between the header and feature sections
+    */
+  margin-top: -10rem;
+  /*
+        using the direct child we can control any current and future child
+        we may put in the section and have it already skewed and ready to go
+    */ }
+  .section-features > * {
+    transform: skewY(7deg); }
+  @media only screen and (max-width: 56.25em) {
+    .section-features {
+      padding: 10rem 0; } }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  /*
+        hide the white gap between the feature and tours sections
+    
+    */
+  margin-top: -10rem; }
+  @media only screen and (max-width: 56.25em) {
+    .section-tours {
+      padding: 20rem 0 10rem 0; } }
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .section-stories {
+      padding: 10rem 0; } }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  @media only screen and (max-width: 56.25em) {
+    .section-book {
+      padding: 10rem 0; } }
+
+.book {
+  /*
+    the "solid gradient" technique
+    instead of using clip-path, e can specify a clipped background using linear
+    gradient - the degree of the curve
+    same color from 0 to 50% means that we do not ease smoothly into the next
+    color but instead change abruptly
+    50.1% for less edgy dividing line
+  */
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50.1%), url(../img/nat-10.jpg);
+  /*
+    same as cover but just in the x-direction
+  */
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  /*   height: 50rem;
+ */ }
+  @media only screen and (max-width: 75em) {
+    .book {
+      /*
+      the gradient line corresponds to the width of the form within
+    */
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65.1%), url(../img/nat-10.jpg);
+      /*
+      now really cover, in all directions
+    */
+      background-size: cover; } }
+  @media only screen and (max-width: 56.25em) {
+    .book {
+      /*
+      the direction doesn't matter anymore
+    */
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
+  .book__form {
+    /*
+        form is on the left before the dividing line
+    */
+    width: 50%;
+    padding: 6rem; }
+    @media only screen and (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media only screen and (max-width: 56.25em) {
+      .book__form {
+        width: 100%; } }

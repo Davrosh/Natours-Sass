@@ -1,0 +1,226 @@
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+
+        /*
+            for reusable component
+        */
+        font-family: inherit;
+        color: inherit;
+
+        /*
+            always a bit more on the sides
+        */
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rbga($color-white, .5);
+        border: none;
+        
+        /*
+            it needs to be here because otherwise when we click on an element
+            it becomes focused and gets a border and moves the other ones down
+            now it will have the border regardless only we cannot see it
+        */
+        border-bottom: 3px solid transparent;
+
+        width: 90%;
+        /*
+            give it its own line
+        */
+        display: block;
+        transition: all .3s;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        &:focus {
+            /*
+                remove regular blue box when focused
+                instead, custom focus effect
+            */
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        /*
+            when the text entered is invalid, change color
+        */
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        /*
+            style placeholder text
+        */
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+
+        &::placeholder {
+            color: $color-grey-dark-2;
+        }
+
+        /*
+            overrides firefox box-shadow on required inputs
+        */
+        &:required {
+            box-shadow: none;
+        }
+    }
+
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    /*
+        The :placeholder-shown pseudo-class styles an element that has an active
+        placeholder. In our case, the input.
+        The label is not a child, but a sibling so we use the adjacent sibling
+        selector (the very following selector - label has to be declared after
+        input).
+    */
+    &__input:placeholder-shown + &__label {
+        /*
+            initially, the label text does not appear: it is opaque and by
+            setting visibility: hidden it is also completely gone
+            we need to declare both because visibility cannot be animated
+            whereas opacity can.
+        */
+        opacity: 0;
+        visibility: hidden;
+
+        /*
+            initially, it is above where the input is
+            we would like it to come down in the animation
+        */
+        transform: translateY(-4rem);
+    }
+
+
+    &__radio-group {
+        /*
+            both radio buttons on same line
+        */
+        width: 49%;
+        display: inline-block;
+
+        position: relative;
+
+        /*
+            radio buttons on top of each other
+        */
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    /*
+        hide real html radio button
+    */
+    &__radio-input {
+        
+        /* display: none; */
+
+        /*
+            now, the real input is still "interactable" by tabbing
+        */
+        opacity: 0;
+
+        // transform: translateX(18rem) translateY(20%);
+
+        /*
+            the browser box exclaiming that the radio input is required is
+            next to the first real radio button
+            so we will move the real radio button
+
+            the two input boxes for name and email have a width of 90%
+            of the container
+
+            the first radio button is taken out of the normal flow,
+            4% from the right edge of the first radio-group
+            which is 49% - 4% = 45% which is the halfway point of the name and
+            email input boxes
+        */
+        position: absolute;
+        right: 4%;
+        bottom: 0;
+
+        @include respond(tab-port) {
+            right: 46%;
+        }
+    }
+    
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    /*
+        a fake radio button that we can design
+    */
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+        /*
+            smaller circle in the center of the big circle
+            for selected radio button
+        */
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    /*
+        when the real radio input is checked ->
+        in the general sibling radio label ->
+        take its child the fake radio button and set its after element's opacity
+        to 1 - the smaller circle now appears
+    */
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+    &__radio-input:focus ~ &__radio-label &__radio-button {
+        border: 5px solid $color-black;
+
+    }
+
+    &__radio-input:focus ~ &__radio-label &__radio-button::after {
+        background-color: $color-black;
+    }    
+    
+
+}

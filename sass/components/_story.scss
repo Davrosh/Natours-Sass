@@ -1,0 +1,163 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    /*
+        color against our video
+    */
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+
+    /*
+        to accommodate for the picture's translateX(-3rem)
+    */
+    padding-left: 9rem;
+
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    /*
+        on phones, save width by removing skew
+    */
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
+    &__shape {
+        /*
+            fixes a problem for some people
+        */
+        overflow: hidden;
+
+        width: 15rem;
+        height: 15rem;
+        /*
+            the text floats around it
+        */
+        float: left;
+
+
+
+        /*
+            when moving floated elements, transforms are better than margins
+            move the image further left from the text
+            counter the skew on the parent
+            IMPORTANT: we need to put both in the same line since otherwise
+            one transform can take precedence over another
+        */
+        transform: translateX(-3rem) skewX(12.01deg);
+        position: relative;
+
+        /*
+            easier alternative to clip-path: circle
+            we actually could do without clip-path but we need to keep it in
+            order to demonstrate @support
+        */
+        overflow: hidden;
+        border-radius: 50%;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) 
+        { 
+            /*
+                the text floats around it as if it were a circle
+                radius at x y
+                we put 50% on the radius so that its diameter is 100% of the
+                image size
+                and we position the start of the circle in the center of the
+                image needs float and defined height and width
+            */
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+
+            /*
+                the image now looks like a circle
+            */
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+
+            /*
+                since we know clip-path we no longer need border-radius
+            */
+            border-radius: 0;
+        }
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
+    }
+
+    &__img {
+        /*
+            responsive images need explicit sizing
+        */
+        height: 100%;
+
+        /*
+            initially, the image is zoomed in
+        */
+        transform: translateX(-4rem) scale(1.4);
+
+        /*
+            fix general animation errors
+        */
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
+    }
+
+    &__caption {
+        /*
+            text in the middle of image, vertically further down
+        */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+
+        /*
+            initially invisible
+        */
+        opacity: 0;
+        transition: all .5s;
+
+        /*
+            fix "shakyness" on hover
+        */
+        backface-visibility: hidden;
+    }
+
+    /*
+    when hovering on image figure, the caption appears
+    */
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    /*
+    when hovering on image figure, the image is zoomed out, blurred and darkened
+    */
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}

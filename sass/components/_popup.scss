@@ -1,0 +1,216 @@
+.popup {
+  /*
+    let the popup occupy the entire viewport and be fixed
+    above even the nav button and gray
+  */
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 9999;
+
+  /*
+    opacity can be animated
+  */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  /*
+    check if it is supported (needs property value) and apply within
+
+    apply effect to the background of a blur and add slightly less dim
+    background
+    if this is not supported then the above darker background still applies
+  */
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+  }
+
+  &__content {
+
+    /*
+        center of the popup using absolute positioning
+    */
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+
+    /*
+        using table to create two columns of equal height
+        and specified width and vertical-align
+        but we will be using semantic css with css grid
+    */
+    // display: table;
+
+    /*
+        fix images overflowing content, border radius not visible
+    */
+    overflow: hidden;
+
+    /*
+        at first invisible and scaled down
+        we need to define translate again because the one in mixin absCenter
+        would otherwise override it
+    */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+
+    /*
+        first we allow the black background to come in, then we display our
+        content box with a delay
+    */
+    transition: all 0.5s 0.2s;
+
+    @include respond(tab-port) {
+      height: 80% !important;
+      max-width: 80% !important;
+      padding: 0 !important;
+    }
+  }
+
+  &__left {
+    // width: 33.333333%;
+    // display: table-cell;
+
+    @include respond(tab-port) {
+      display: flex;
+    }
+
+    /*
+      part of our compact fix for a small phone popup
+      no pictures, centered and scrolled
+    */
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__right {
+    // width: 66.6666667%;
+    // display: table-cell;
+    // vertical-align: middle;
+
+    padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 2rem;
+
+      justify-content: space-between;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+
+    /*
+        make each occupy just half of the automatic height
+    */
+    height: 50%;
+    /*
+        make each cover to make them not look stretched out
+    */
+    object-fit: cover;
+
+    @include respond(tab-port) {
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    
+    /*
+        create two equally wide text columns with a gap and a border in between
+    */
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem; //1em = 14px;
+    -moz-column-rule: 1px solid $color-grey-light-2;
+
+    column-count: 2;
+    column-gap: 4rem; //1em = 14px;
+    column-rule: 1px solid $color-grey-light-2;
+
+    /*
+        automatically add hyphens to wrapping words
+        doesn't work in CHrome desktop :(
+    */
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+    }
+
+    @include respond(phone) {
+      display: flex;
+      flex: 1 0 20rem;
+      column-count: 1;
+      overflow: hidden auto;
+    }
+  }
+
+  //Open states
+  /*
+    when we have #popup at the url (when we click on the link that
+    opens up the popup)
+
+    when we click on the close button link, it is set to replace the #popup with
+    something else, getting rid of the target state
+  */
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /*
+    when popup is triggered, content appears and scales up
+  */
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /*
+    style the close button
+  */
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+
+
+      @include respond(phone) {
+        top: 0.5rem;
+        right: 1rem;
+      }
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
